@@ -1,0 +1,8 @@
+<h1>Add Book</h1>
+<%- include('./partials/navigation.ejs') %>
+<form action="/book/add" method="post">
+  <input type="text" name="title" placeholder="Title">
+  <input type="number" name="publishingYear" placeholder="Publishing Year">
+  <input type="number" name="authorId" placeholder="Author ID">
+  <button type="submit">Add Book</button>
+</form>

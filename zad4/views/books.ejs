@@ -1,0 +1,21 @@
+<h1>Books</h1>
+<%- include('./partials/navigation.ejs') %>
+<% if (books.length > 0) { %>
+ <% books.forEach(book => { %>
+    <p><%= book.title %></p>
+    <a href="/book/<%= book.id %>">Check</a>
+    <button onclick="deleteBook(<%= book.id %>)">Delete</button>
+ <% }); %>
+<% } else { %>
+ <p>No books has been found</p>
+<% } %>
+
+<script>
+ function deleteBook(id) {
+    fetch(`/book/delete/${id}`, {
+      method: 'DELETE',
+    }).then(() => {
+      window.location.href = '/book/list';
+    });
+ }
+</script>
