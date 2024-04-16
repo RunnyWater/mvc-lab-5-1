@@ -1,0 +1,9 @@
+<h1>Books</h1>
+<%- include('./partials/navigation.ejs') %>
+<% if (books.length > 0) { %>
+  <% books.forEach(book => { %>
+    <p><%= book.title %></p>
+  <% }); %>
+<% } else { %>
+  <p>No books has been found</p>
+<% } %>

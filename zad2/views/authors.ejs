@@ -1,0 +1,9 @@
+<h1>Authors</h1>
+<%- include('./partials/navigation.ejs') %>
+<% if (authors.length > 0) { %>
+  <% authors.forEach(author => { %>
+    <p><%= author.name %></p>
+  <% }); %>
+<% } else { %>
+  <p>No authors has been found</p>
+<% } %> 
